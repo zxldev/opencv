@@ -1,8 +1,13 @@
 #!/usr/bin/python2
 # -*- coding: utf8 -*-
-import numpy as np
 import cv2
 from zxldev.tools.common import show_img
+
+"""
+##############################################
+##              图像读写展示                  ##
+##############################################
+"""
 
 ##############################################
 ## 读取图像
@@ -16,11 +21,12 @@ from zxldev.tools.common import show_img
 img = cv2.imread('src/RGB.jpg')
 
 
+
 ##############################################
 ## 显示图像
 ##############################################
 
-show_img(img,flags=cv2.CV_WINDOW_AUTOSIZE,usematplotlib=True)
+show_img(img,usematplotlib=False)
 
 ##############################################
 ## 写入图像

@@ -10,7 +10,7 @@ PJ_ROOT_PATH=os.getcwd()
 
 
 '''
-:param asd
+显示图片
 '''
 def show_img( img,title = 'image',closeAll = True,flags = cv2.WINDOW_NORMAL,usematplotlib = False):
     if usematplotlib:
