@@ -110,6 +110,6 @@ lineType=None,
 bottomLeftOrigin=None 反转?
 '''
 font = cv2.FONT_HERSHEY_SIMPLEX
-cv2.putText(img,'OpenCV',(10,500), font, 5,(255,255,255),2,bottomLeftOrigin=0)
+cv2.putText(img,'OpenCV zqq',(10,500), font, 5,(255,255,255),2,bottomLeftOrigin=0)
 
 show_img(img,flags=cv2.CV_WINDOW_AUTOSIZE)

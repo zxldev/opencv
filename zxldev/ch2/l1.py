@@ -14,13 +14,13 @@ from zxldev.tools.common import *
 ## 图像像素操作1
 ##【使用“[]”直接访问某点操作非常耗时， 尽量不要使用】
 ##############################################
-img = cv2.imread('src/RGB.jpg')
+img = cv2.imread('../src/RGB.jpg')
 #获取某点的BGR颜色
 px = img[100,100]
-print  px
+print(px)
 #获取某点的蓝色值
 blue = img[100,100,0]
-print  blue
+print(blue)
 #给图像某点直接赋值[运行较慢，暂时注释]
 for i,row in enumerate(img):
     for j,pix in enumerate(row):
