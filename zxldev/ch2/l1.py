@@ -3,7 +3,7 @@
 import cv2
 import numpy as np
 from zxldev.tools.common import *
-
+from matplotlib import pyplot as plt
 """
 ##############################################
 ##              图像基本操作                 ##
@@ -26,7 +26,7 @@ for i,row in enumerate(img):
     for j,pix in enumerate(row):
         if i % 100 == 0  or j % 50== 0:
             img[i][j] = [255,255,255]
-show_img(img)
+show_img(img,usematplotlib=True)
 
 ##############################################
 ## 图像像素操作2
@@ -47,3 +47,25 @@ print img.size
 print img.dtype
 
 
+
+##############################################
+## 添加边框
+##############################################
+BLUE = (255,0,0)
+
+img1 = cv2.imread('../src/opencv-logo.png')
+
+replicate = cv2.copyMakeBorder(img1,20,20,20,20,cv2.BORDER_REPLICATE)
+reflect = cv2.copyMakeBorder(img1,20,20,20,20,cv2.BORDER_REFLECT)
+reflect101 = cv2.copyMakeBorder(img1,20,20,20,20,cv2.BORDER_REFLECT_101)
+wrap = cv2.copyMakeBorder(img1,20,20,20,20,cv2.BORDER_WRAP)
+constant= cv2.copyMakeBorder(img1,20,20,20,20,cv2.BORDER_CONSTANT,value=BLUE)
+
+plt.subplot(231),plt.imshow(img1,'gray'),plt.title('ORIGINAL')
+plt.subplot(232),plt.imshow(replicate,'gray'),plt.title('REPLICATE')
+plt.subplot(233),plt.imshow(reflect,'gray'),plt.title('REFLECT')
+plt.subplot(234),plt.imshow(reflect101,'gray'),plt.title('REFLECT_101')
+plt.subplot(235),plt.imshow(wrap,'gray'),plt.title('WRAP')
+plt.subplot(236),plt.imshow(constant,'gray'),plt.title('CONSTANT')
+
+plt.show()

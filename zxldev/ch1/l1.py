@@ -18,7 +18,7 @@ from zxldev.tools.common import show_img
 # cv2.IMREAD_COLOR 正常彩色图片
 # cv2.IMREAD_GRAYSCALE 灰白模式
 # cv2.IMREAD_UNCHANGED alpha通道模式
-img = cv2.imread('src/RGB.jpg')
+img = cv2.imread('../src/RGB.jpg')
 
 
 
