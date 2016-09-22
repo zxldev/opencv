@@ -23,7 +23,7 @@ show_img(dst)
 ## 按位运算合并
 ##############################################
 img1 = cv2.imread('../src/RGB2.jpg')
-img2 = cv2.imread('../src/opencv-logo.png')
+img2 = cv2.imread('../src/opencv_logo.png')
 
 # Load two images
 # img1 = cv2.imread('messi5.jpg')

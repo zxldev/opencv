@@ -53,7 +53,7 @@ print img.dtype
 ##############################################
 BLUE = (255,0,0)
 
-img1 = cv2.imread('../src/opencv-logo.png')
+img1 = cv2.imread('../src/opencv_logo.png')
 
 replicate = cv2.copyMakeBorder(img1,20,20,20,20,cv2.BORDER_REPLICATE)
 reflect = cv2.copyMakeBorder(img1,20,20,20,20,cv2.BORDER_REFLECT)
