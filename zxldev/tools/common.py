@@ -18,6 +18,29 @@ def show_img( img,title = 'image',closeAll = True,flags = cv2.WINDOW_NORMAL,usem
     else:
         show_img_common(img,title,closeAll,flags)
 
+'''
+显示多张图片
+'''
+def show_imgs(imgMap):
+    from matplotlib import pyplot as plt
+    import math
+    lenImg = len(imgMap)
+    column = math.ceil(math.sqrt(lenImg))
+    #计算行数
+    row = column - math.floor((column*column - lenImg)/column)
+    counter = 1
+    if isinstance(imgMap,list):
+        for img in imgMap:
+            plt.subplot(row,column,counter), plt.imshow(img), plt.title(str(counter))
+            plt.xticks([]), plt.yticks([])
+            counter = counter + 1
+    if isinstance(imgMap, dict):
+        for title in imgMap:
+            plt.subplot(row, column, counter), plt.imshow(imgMap[title]), plt.title(title)
+            plt.xticks([]), plt.yticks([])
+            counter = counter + 1
+    plt.show()
+
 def show_img_common(img,title = 'image',closeAll = True,flags = cv2.WINDOW_NORMAL):
     # cv2.WINDOW_AUTOSIZE 自适应图片
     # cv2.WINDOW_NORMAL 正常展示
@@ -34,7 +57,7 @@ def show_img_common(img,title = 'image',closeAll = True,flags = cv2.WINDOW_NORMA
             fileName = 'autoSave' + timeStr
         else:
             fileName = title + timeStr
-        cv2.imwrite(os.path.join(PJ_ROOT_PATH, 'dest/' + fileName + '.png'), img)
+        cv2.imwrite(os.path.join(PJ_ROOT_PATH, '../dest/' + fileName + '.png'), img)
     if closeAll or k == 27:
         cv2.destroyAllWindows()
 
